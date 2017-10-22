@@ -1,0 +1,28 @@
+{
+  "name": "rarity-bot",
+  "version": "1.0.0",
+  "description": "Bot created for discord guild army or ren.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccalamos/rarity-bot.git"
+  },
+  "keywords": [
+    "Discord",
+    "Node.js"
+  ],
+  "author": "Cole J Calamos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccalamos/rarity-bot/issues"
+  },
+  "homepage": "https://github.com/ccalamos/rarity-bot#readme",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "winston": "^2.4.0"
+  }
+}
