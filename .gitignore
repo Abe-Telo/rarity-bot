@@ -66,3 +66,7 @@ typings/
 
 # Dev Specific files
 .dev/
+
+# Token Security
+./config/auth.JSON
+./config/auth.json

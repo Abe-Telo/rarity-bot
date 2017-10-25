@@ -5,7 +5,7 @@ const logger = require('winston');
 
 const https = require('https');
 
-const auth = require('./config/auth.json');
+const auth = require('./config/auth.JSON');
 
 let lastM;
 
