@@ -1,3 +1,5 @@
+"use strict;"
+
 const messageConfig = require('../config/simpleMessageConfig.JSON');
 
 const Spacing = messageConfig["Spacing"];
