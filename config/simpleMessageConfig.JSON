@@ -1,0 +1,50 @@
+module.exports = 
+{
+	"Spacing":{
+		"Before": {
+			"header": 0,
+			"messageItem": 0,
+			"footer": 1,
+			"disclaimer": 4
+		},
+		"After": {
+			"header": 2,
+			"messageItem": 1,
+			"footer": 0,
+			"disclaimer": 0
+		}
+	},
+	"TabSpace": {
+		"header": 0,
+		"messageItem": 1,
+		"footer": 0,
+		"disclaimer": 0
+	},
+	"Seperators": {
+		"Before": {
+			"header": "=",
+			"messageItem": "",
+			"footer": "=",
+			"disclaimer": "="
+		},
+		"After": {
+			"header": "=",
+			"messageItem": "",
+			"footer": "=",
+			"disclaimer": "="
+		}
+	},
+	"SeperatorOccurance": {
+		"header": 1,
+		"messageItem": 0,
+		"footer": 1,
+		"disclaimer": 1
+	},
+	"SpacesAfterSeperators": {
+		"header": 1,
+		"messageItem": 0,
+		"footer": 0,
+		"disclaimer": 1	
+	},
+	"disclaimer": "DISCLAIMER: This bot is not associated with SWGOH.GG"
+}

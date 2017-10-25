@@ -60,3 +60,9 @@ typings/
 # Webstorm 
 .idea/
 .idea
+
+# Mac Specific
+.DS_Store
+
+# Dev Specific files
+.dev/
