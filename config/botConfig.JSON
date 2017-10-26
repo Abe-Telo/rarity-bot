@@ -1,0 +1,8 @@
+module.exports = 
+{
+	"LoggerLevel": "info",
+	"MessageType": "SIMPLE",
+	"MessageOptions": {
+		"split": true
+	}
+}

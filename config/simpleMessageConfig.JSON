@@ -35,16 +35,17 @@ module.exports =
 		}
 	},
 	"SeperatorOccurance": {
-		"header": 1,
+		"header": 3,
 		"messageItem": 0,
-		"footer": 1,
+		"footer": 3,
 		"disclaimer": 1
 	},
 	"SpacesAfterSeperators": {
 		"header": 1,
 		"messageItem": 0,
-		"footer": 0,
+		"footer": 1,
 		"disclaimer": 1	
 	},
-	"disclaimer": "DISCLAIMER: This bot is not associated with SWGOH.GG"
+	"disclaimer": "DISCLAIMER: This bot is not affiliated with SWGOH.GG, EA, EA Capital Games, Disney or Lucasfilm LTD",
+	"ShowDisclaimer": false
 }
