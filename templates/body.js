@@ -27,10 +27,12 @@ module.exports =
 {
 	"SimpleMessage": function (info = [""])
 	{
-		let body = "";
+		//let body = "";
+		let body = "\n```\n";
 		for(let currentIndex = 0; currentIndex < info.length; currentIndex++){
 			body += formatSection(info[currentIndex]);
 		}
+		body += "```";
 		return body;
 	}
 }

@@ -13,11 +13,15 @@ function formatSection(sectionInfo)
 	let formattedMsg = "";
 	formattedMsg = "\n".repeat(Spacing["Before"]["footer"]);
 	formattedMsg += "\t".repeat(TabSpace);
+	formattedMsg += "**";
 	formattedMsg += Seperators["Before"]["footer"].repeat(SeperatorOccurance);
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
+	formattedMsg += '`';
 	formattedMsg += sectionInfo;
+	formattedMsg += '`';
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
 	formattedMsg += Seperators["After"]["footer"].repeat(SeperatorOccurance);
+	formattedMsg += "**";
 	formattedMsg += "\n".repeat(Spacing["After"]["footer"]);
 	return formattedMsg;
 }
@@ -25,7 +29,7 @@ function formatSection(sectionInfo)
 
 module.exports = 
 {
-	"SimpleMessage": function (info = "")
+	"SimpleMessage": function (info = "END")
 	{
 		return formatSection(info);
 	}

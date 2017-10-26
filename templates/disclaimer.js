@@ -13,11 +13,13 @@ function formatSection(sectionInfo)
 	let formattedMsg = "";
 	formattedMsg = "\n".repeat(Spacing["Before"]["disclaimer"]);
 	formattedMsg += "\t".repeat(TabSpace);
+	formattedMsg += "_";
 	formattedMsg += Seperators["Before"]["disclaimer"].repeat(SeperatorOccurance);
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
 	formattedMsg += sectionInfo;
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
 	formattedMsg += Seperators["After"]["disclaimer"].repeat(SeperatorOccurance);
+	formattedMsg += "_";
 	formattedMsg += "\n".repeat(Spacing["After"]["disclaimer"]);
 	return formattedMsg;
 }

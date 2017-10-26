@@ -14,12 +14,17 @@ function formatSection(sectionInfo)
 	let formattedMsg = "";
 	formattedMsg = "\n".repeat(Spacing["Before"]["header"]);
 	formattedMsg += "\t".repeat(TabSpace);
+	formattedMsg += "**";
 	formattedMsg += Seperators["Before"]["header"].repeat(SeperatorOccurance);
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
+	formattedMsg += '`';
 	formattedMsg += sectionInfo;
+	formattedMsg += '`';
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
 	formattedMsg += Seperators["After"]["header"].repeat(SeperatorOccurance);
+	formattedMsg += "**";
 	formattedMsg += "\n".repeat(Spacing["After"]["header"]);
+	formattedMsg += "`User` | `Rarity` | `Power`\n";
 	return formattedMsg;
 }
 

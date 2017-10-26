@@ -68,5 +68,4 @@ typings/
 .dev/
 
 # Token Security
-./config/auth.JSON
-./config/auth.json
+./config/auth.*

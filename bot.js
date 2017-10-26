@@ -1,32 +1,37 @@
-"use strict";
+"use strict;"
 
 const Discord = require('discord.js');
-const logger = require('winston');
 
 const https = require('https');
 
-const auth = require('./config/auth.JSON');
+const TOKEN = require('./config/auth.JSON')["token"];
+
+const BotLogger = require('./cogs/botLogger.js');
 
 let lastM;
-
-// Configure logger settings
-logger.remove(logger.transports.Console);
-
-logger.add(logger.transports.Console, {
-    colorize: true
-});
-
-logger.level = 'debug';
 
 // Initialize Discord Bot
 
 var bot = new Discord.Client();
-bot.login(auth.token);
+bot.login(TOKEN);
+
+// Initialize Bot Logger
+
+let logger = new BotLogger('info');
+
+if (process.argv[2] == 'dev') {
+	logger.mode = 'debug';
+} 
+else if (process.argv[2] == '-v' || process.argv[2] == '-V'){
+	logger.mode = 'verbose';
+}
+
+
 
 bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.user.username + ' - (' + bot.user.id + ')');
+    logger.write('Connected');
+    logger.write('Logged in as: ');
+    logger.write(bot.user.username + ' - (' + bot.user.id + ')');
 });
 
 bot.on('message', message => {
