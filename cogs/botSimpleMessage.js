@@ -1,5 +1,7 @@
 "use strict;"
 
+const config = require('../config/simpleMessageConfig.JSON'); 
+
 const headerTemplate = require('../templates/header')["SimpleMessage"];
 const bodyTemplate = require('../templates/body')["SimpleMessage"];
 const footerTemplate = require('../templates/footer')["SimpleMessage"];
@@ -7,13 +9,14 @@ const disclaimerTemplate = require('../templates/disclaimer')["SimpleMessage"];
 
 let SimpleMessage = class SimpleMesssage {
 
-	constructor(client, title, message, footer = "")
+	constructor(client, title, message, footer = "END", disclaimerToggle = config["ShowDisclaimer"])
 	{
-		this.client       = client;
-		this.header       = headerTemplate(title); 
-		this.body         = bodyTemplate(message);
-		this.footer       = footerTemplate(footer);
-		this.disclaimer   = disclaimerTemplate();
+		this.client           = client;
+		this.header           = headerTemplate(title); 
+		this.body             = bodyTemplate(message);
+		this.footer           = footerTemplate(footer);
+		this.disclaimer       = disclaimerTemplate();
+		this.disclaimerToggle = disclaimerToggle;
 	}
 
 	set header(title)
@@ -48,7 +51,11 @@ let SimpleMessage = class SimpleMesssage {
 
 	get fullMessage()
 	{
-		return `${this.header}${this.body}${this.footer}${this.disclaimer}`;
+		let msg = `${this.header}${this.body}${this.footer}`;
+		if (this.disclaimerToggle) {
+			msg += this.disclaimer;
+		}
+		return msg;
 	}
 
 }
