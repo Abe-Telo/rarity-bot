@@ -1,5 +1,5 @@
 module.exports = {
-  "GRIEVOUS": {},
+	"GRIEVOUS": {},
 	"HUMANTHUG": {},
 	"ADMINISTRATORLANDO": {},
 	"PLOKOON": {},
@@ -157,4 +157,4 @@ module.exports = {
 	"FIRSTORDERTIEPILOT": {},
 	"VADER": {},
 	"STORMTROOPERHAN": {}
-}
+};

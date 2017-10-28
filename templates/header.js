@@ -1,7 +1,7 @@
-"use strict;"
+"use strict";
 
-const messageConfig = require('../config/simpleMessageConfig.JSON');
-const DisplayNames = require('../data/DisplayNames.JSON');
+const messageConfig = require("../config/simpleMessageConfig.JSON");
+const DisplayNames = require("../data/DisplayNames.JSON");
 
 const Spacing = messageConfig["Spacing"];
 const Seperators = messageConfig["Seperators"];
@@ -17,9 +17,9 @@ function formatSection(sectionInfo)
 	formattedMsg += "**";
 	formattedMsg += Seperators["Before"]["header"].repeat(SeperatorOccurance);
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
-	formattedMsg += '`';
+	formattedMsg += "`";
 	formattedMsg += sectionInfo;
-	formattedMsg += '`';
+	formattedMsg += "`";
 	formattedMsg += " ".repeat(SpacesAfterSeperators);
 	formattedMsg += Seperators["After"]["header"].repeat(SeperatorOccurance);
 	formattedMsg += "**";
@@ -35,4 +35,4 @@ module.exports =
 	{
 		return formatSection(DisplayNames[info] || info);
 	}
-}
+};

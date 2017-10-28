@@ -154,4 +154,4 @@ module.exports = {
 	"XWINGRESISTANCE" : "Resistance X-wing",
 	"ZAMWESELL" : "Zam Wesell",
 	"ZEBS3" : "Garazeb \"Zeb\" Orrelios"
-}
+};

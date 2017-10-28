@@ -1,6 +1,6 @@
-"use strict;"
+"use strict";
 
-const logger = require('winston');
+const logger = require("winston");
 
 logger.remove(logger.transports.Console);
 
@@ -28,32 +28,32 @@ let Logger = class Logger {
 
 	error(msg)
 	{
-		logger.log('error', msg);
+		logger.log("error", msg);
 	}
 
 	warning(msg)
 	{
-		logger.log('warn', msg);
+		logger.log("warn", msg);
 	}
 
 	info(msg)
 	{
-		logger.log('info', msg);
+		logger.log("info", msg);
 	}
 
 	verbose(msg)
 	{
-		logger.log('verbose', msg);
+		logger.log("verbose", msg);
 	}
 
 	debug(msg)
 	{
-		logger.log('debug', msg);
+		logger.log("debug", msg);
 	}
 
 	silly(msg)
 	{
-		logger.log('silly', msg);
+		logger.log("silly", msg);
 	}
 
 	write(msg, mode = undefined)
@@ -61,6 +61,6 @@ let Logger = class Logger {
 		logger.log(mode || this.mode, msg);
 	}
 
-}
+};
 
 module.exports = Logger;

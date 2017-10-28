@@ -1,20 +1,19 @@
-"use strict;"
+"use strict";
 
-const config = require('../config/simpleMessageConfig.JSON'); 
+const config = require("../config/simpleMessageConfig.JSON"); 
 
-const headerTemplate = require('../templates/header')["SimpleMessage"];
-const bodyTemplate = require('../templates/body')["SimpleMessage"];
-const footerTemplate = require('../templates/footer')["SimpleMessage"];
-const disclaimerTemplate = require('../templates/disclaimer')["SimpleMessage"];
+const headerTemplate = require("../templates/header")["SimpleMessage"];
+const bodyTemplate = require("../templates/body")["SimpleMessage"];
+const footerTemplate = require("../templates/footer")["SimpleMessage"];
+const disclaimerTemplate = require("../templates/disclaimer")["SimpleMessage"];
 
 let SimpleMessage = class SimpleMesssage {
 
-	constructor(client, title, message, footer = "END", disclaimerToggle = config["ShowDisclaimer"])
+	constructor(title, message, footer, disclaimerToggle = config["ShowDisclaimer"])
 	{
-		this.client           = client;
 		this.header           = headerTemplate(title); 
 		this.body             = bodyTemplate(message);
-		this.footer           = footerTemplate(footer);
+		this.footer           = footerTemplate(footer || "END");
 		this.disclaimer       = disclaimerTemplate();
 		this.disclaimerToggle = disclaimerToggle;
 	}
@@ -49,6 +48,21 @@ let SimpleMessage = class SimpleMesssage {
 		return this.endMessage;
 	}
 
+	set disclaimerToggle(disclaimerToggle)
+	{
+		this.dt = disclaimerToggle;
+	}
+
+	get disclaimerToggle()
+	{
+		return this.dt;
+	}
+
+	toggleDisclaimer()
+	{
+		this.disclaimerToggle = !this.disclaimerToggle;
+	}
+
 	get fullMessage()
 	{
 		let msg = `${this.header}${this.body}${this.footer}`;
@@ -58,6 +72,6 @@ let SimpleMessage = class SimpleMesssage {
 		return msg;
 	}
 
-}
+};
 
 module.exports = SimpleMessage;

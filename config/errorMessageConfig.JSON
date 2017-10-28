@@ -1,0 +1,35 @@
+module.exports = 
+{
+	"Spacing":{
+		"Before": {
+			"header": 0,
+			"messageItem": 0
+		},
+		"After": {
+			"header": 1,
+			"messageItem": 1
+		}
+	},
+	"TabSpace": {
+		"header": 0,
+		"messageItem": 0
+	},
+	"Seperators": {
+		"Before": {
+			"header": "=",
+			"messageItem": ""
+		},
+		"After": {
+			"header": "=",
+			"messageItem": ""
+		}
+	},
+	"SeperatorOccurance": {
+		"header": 3,
+		"messageItem": 0
+	},
+	"SpacesAfterSeperators": {
+		"header": 1,
+		"messageItem": 0
+	}
+};

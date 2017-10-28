@@ -1,6 +1,6 @@
-"use strict;"
+"use strict";
 
-const messageConfig = require('../config/simpleMessageConfig.JSON');
+const messageConfig = require("../config/simpleMessageConfig.JSON");
 
 const Spacing = messageConfig["Spacing"];
 const Seperators = messageConfig["Seperators"];
@@ -31,4 +31,4 @@ module.exports =
 	{
 		return formatSection(info);
 	}
-}
+};

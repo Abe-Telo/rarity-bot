@@ -1,6 +1,6 @@
-"use strict;"
+"use strict";
 
-const messageConfig = require('../config/simpleMessageConfig.JSON');
+const messageConfig = require("../config/simpleMessageConfig.JSON");
 
 const Spacing = messageConfig["Spacing"];
 const Seperators = messageConfig["Seperators"];
@@ -27,7 +27,6 @@ module.exports =
 {
 	"SimpleMessage": function (info = [""])
 	{
-		//let body = "";
 		let body = "\n```\n";
 		for(let currentIndex = 0; currentIndex < info.length; currentIndex++){
 			body += formatSection(info[currentIndex]);
@@ -35,4 +34,4 @@ module.exports =
 		body += "```";
 		return body;
 	}
-}
+};

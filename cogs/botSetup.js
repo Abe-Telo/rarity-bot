@@ -1,28 +1,41 @@
-"use strict;"
+"use strict";
 
-const Discord = require('discord.js');
+const Events = require("events");
+const Discord = require("discord.js");
 
-const config = require('../config/botConfig.JSON');
-const TOKEN = require('../config/auth.JSON')["token"];
+const config = require("../config/botConfig.JSON");
+const TOKEN = require("../config/auth.JSON")["token"];
 
-const BotLogger = require('../cogs/botLogger.js');
+const Logger = require("../cogs/botLogger.js");
+const InfoGrabber = require("../cogs/unitInfoRetrieval");
+const Message = require("../cogs/botMessages.js");
+const MessageEmitter = new Events.EventEmitter();
 
 let Bot = class Bot {
 
 	constructor ()
 	{
 		this.client = new Discord.Client();
-		this.logger = new BotLogger(config.LoggerLevel);
+		this.logger = new Logger(config.LoggerLevel);
+		this.logger.write("Bot has been initialized!");
+		this.on();
 	}
 
 	on()
 	{
-		return this.client.login(TOKEN);
+		this.client.login(TOKEN);
+		this.logger.write("Bot is now on!");
+		this.client.on("ready", evt => {
+			this.user = this.client.user;
+			this.logger.write("Logged in as: ");
+			this.logger.write(this.user.username + " - (" + this.user.id + ")");
+		});
 	}
 
 	off()
 	{
-		return this.client.destroy();
+		this.client.destroy();
+		this.logger.write("Bot is now off!");
 	}
 
 	set client(client)
@@ -45,23 +58,34 @@ let Bot = class Bot {
 		return this.botlogger;
 	}
 
+	set user(user)
+	{
+		this.clientUser = user;
+	}
+
+	get user()
+	{
+		return this.clientUser;
+	}
+
 	log(msg)
 	{
 		this.logger.write(msg);
 		return this.logger.mode;
 	}
 
-	sendMessage(command, type = config.MessageType)
+	sendMessage(user, message, command, type = config.MessageType)
 	{
-		let msg = "";
+		MessageEmitter.once("MESSAGE_RECIEVED", function (type, msgInfo) {
+			let msg = new Message(type, msgInfo);
+			
+			message.channel.send(msg.message.fullMessage, config.MessageOptions);
+		});
 
-		this.client.user.sendMessage(msg, config.MessageOptions);
+		InfoGrabber(command, type, MessageEmitter);
 	}
 
-}
+};
 
-let x = new Bot();
-
-x.logger.write("Hello World");
 
 module.exports = Bot;

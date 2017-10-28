@@ -48,4 +48,4 @@ module.exports =
 	},
 	"disclaimer": "DISCLAIMER: This bot is not affiliated with SWGOH.GG, EA, EA Capital Games, Disney or Lucasfilm LTD",
 	"ShowDisclaimer": false
-}
+};

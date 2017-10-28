@@ -1,30 +1,45 @@
-"use strict;"
+"use strict";
 
-const UnitsAlias = require('../data/UnitsAlias.JSON'); 
-const Units = require('../data/Units.JSON');
-const InfoRetrieval = require('./unitsInfoRetrieval.js');
-
-let find = function (command) {
-	return null;
-}
-
+const UnitsAlias = require("../data/UnitsAlias.JSON"); 
+const Units = require("../data/Units.JSON");
+ 
 function unitExists(unit) {
-	return (Units[unit] !== undefined || UnitsAlias[unit] !== undefined);
+	return (Units[unit] == undefined || UnitsAlias[unit] == undefined);
 }
 
 function parseCommand(command, assumeStar = false) {
 	let unit = "";
 	let star = 0;
 
-	if (assumeStar) {
+	if (assumeStar && command.length > 1) {
 		star = command.pop();
 	} 
 
-	unit = command.join(' ').toLowerCase();
+	unit = command.join(" ").toLowerCase();
 
 	return {"unit": unit, "star":star};
 }
 
-console.log(unitExists(parseCommand(["raid", "HAN"])["unit"]));
+module.exports = function (command) {
+	if (Units[command[0]]) {
+		return { "unit": command[0], "star":command[1] };
+	}
+	
+	let results = parseCommand(command);
 
-module.exports = find;
+	if (!unitExists(results["unit"])) {
+
+		results = parseCommand(command, true);
+		
+		if (!unitExists(results["unit"])) {
+			return {"error": "Unit Not Found."};
+		}
+	
+	}
+
+	if (!Units[results["unit"]]) {
+		results["unit"] = UnitsAlias[results["unit"]];
+	}
+
+	return results;
+};

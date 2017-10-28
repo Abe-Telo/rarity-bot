@@ -4,5 +4,14 @@ module.exports =
 	"MessageType": "SIMPLE",
 	"MessageOptions": {
 		"split": true
-	}
-}
+	},
+	"WakeSymbol": "!",
+	"Commands": {
+		"default": "rarity",
+		"server-setup": "rarity-setup",
+		"user-prefs": "rarity-prefs",
+		"global-user-prefs": "rarity-gprefs"
+	},
+	"sort": "NAME",
+	"SWGOH": "https://swgoh.gg/api/guilds/17809/units/" 
+};
