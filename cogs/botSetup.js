@@ -79,7 +79,13 @@ let Bot = class Bot {
 		MessageEmitter.once("MESSAGE_RECIEVED", function (type, msgInfo) {
 			let msg = new Message(type, msgInfo);
 			
-			message.channel.send(msg.message.fullMessage, config.MessageOptions);
+			message.channel.send(msg.message.fullMessage, config.MessageOptions)
+				.then( function(sentMessage) {
+					if (type === "ERROR" && config["DeleteError"]) {
+						message.delete(config["DeleteWait"] * 1000);
+						sentMessage.delete(config["DeleteWait"] * 1000);
+					}
+				});
 		});
 
 		InfoGrabber(command, type, MessageEmitter);

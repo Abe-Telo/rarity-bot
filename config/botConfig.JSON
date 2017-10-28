@@ -5,6 +5,8 @@ module.exports =
 	"MessageOptions": {
 		"split": true
 	},
+	"DeleteError": true,
+	"DeleteWait": 3,
 	"WakeSymbol": "!",
 	"Commands": {
 		"default": "rarity",

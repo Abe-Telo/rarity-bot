@@ -4,7 +4,7 @@ const UnitsAlias = require("../data/UnitsAlias.JSON");
 const Units = require("../data/Units.JSON");
  
 function unitExists(unit) {
-	return (Units[unit] == undefined || UnitsAlias[unit] == undefined);
+	return (Units[unit] !== undefined || UnitsAlias[unit] !== undefined);
 }
 
 function parseCommand(command, assumeStar = false) {
@@ -26,11 +26,10 @@ module.exports = function (command) {
 	}
 	
 	let results = parseCommand(command);
-
+	
 	if (!unitExists(results["unit"])) {
 
 		results = parseCommand(command, true);
-		
 		if (!unitExists(results["unit"])) {
 			return {"error": "Unit Not Found."};
 		}
@@ -40,6 +39,6 @@ module.exports = function (command) {
 	if (!Units[results["unit"]]) {
 		results["unit"] = UnitsAlias[results["unit"]];
 	}
-
+	
 	return results;
 };
