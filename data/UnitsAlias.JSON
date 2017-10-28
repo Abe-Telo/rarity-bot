@@ -242,6 +242,7 @@ module.exports = {
 	"biggs ship": "XWINGRED3",
 	"resistance x wing": "XWINGRESISTANCE",
 	"resistance xwing": "XWINGRESISTANCE",
+	"resistance x-wing": "XWINGRESISTANCE",
 	"rp ship": "XWINGRESISTANCE",
 	"zam": "ZAMWESELL",
 	"zam wesell": "ZAMWESELL",
