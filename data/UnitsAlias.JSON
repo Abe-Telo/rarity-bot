@@ -91,6 +91,7 @@ module.exports = {
 	"geonosian soldier": "GEONOSIANSOLDIER",
 	"geonosian spy": "GEONOSIANSPY",
 	"general grievous": "GRIEVOUS",
+	"general veers": "VEERS",
 	"sun fac ship": "GEONOSIANSTARFIGHTER1",
 	"sf ship": "GEONOSIANSTARFIGHTER1",
 	"sun fac starfighter": "GEONOSIANSTARFIGHTER1",
