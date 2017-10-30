@@ -90,6 +90,7 @@ module.exports = {
 	"gauntlet starfighter": "GAUNTLETSTARFIGHTER",
 	"geonosian soldier": "GEONOSIANSOLDIER",
 	"geonosian spy": "GEONOSIANSPY",
+	"general grievous": "GRIEVOUS",
 	"sun fac ship": "GEONOSIANSTARFIGHTER1",
 	"sf ship": "GEONOSIANSTARFIGHTER1",
 	"sun fac starfighter": "GEONOSIANSTARFIGHTER1",
