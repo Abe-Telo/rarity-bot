@@ -1,4 +1,4 @@
-module.exports = {
+{
 	"GRIEVOUS": {},
 	"HUMANTHUG": {},
 	"ADMINISTRATORLANDO": {},
@@ -159,4 +159,4 @@ module.exports = {
 	"FIRSTORDERTIEPILOT": {},
 	"VADER": {},
 	"STORMTROOPERHAN": {}
-};
+}

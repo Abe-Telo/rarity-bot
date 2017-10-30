@@ -1,13 +1,12 @@
 "use strict";
 
-const UnitsAlias = require("../data/UnitsAlias.JSON"); 
-const Units = require("../data/Units.JSON");
- 
-function unitExists(unit) {
+const fs = require("fs");
+
+function unitExists(unit, Units, UnitsAlias) {
 	return (Units[unit.toUpperCase()] !== undefined || UnitsAlias[unit.toLowerCase()] !== undefined);
 }
 
-function parseCommand(command, assumeStar = false) {
+function parseCommand(command, Units, UnitsAlias, assumeStar = false) {
 	let unit = "";
 	let star = 0;
 
@@ -21,16 +20,19 @@ function parseCommand(command, assumeStar = false) {
 }
 
 module.exports = function (command) {
+	let Units = JSON.parse(fs.readFileSync("./data/Units.JSON", "utf8"));
+	let UnitsAlias = JSON.parse(fs.readFileSync("./data/UnitsAlias.JSON", "utf8"));
+
 	if (Units[command[0]]) {
 		return { "unit": command[0], "star":command[1] };
 	}
 	
-	let results = parseCommand(command);
+	let results = parseCommand(command, Units, UnitsAlias);
 
-	if (!unitExists(results["unit"])) {
+	if (!unitExists(results["unit"], Units, UnitsAlias)) {
 
-		results = parseCommand(command, true);
-		if (!unitExists(results["unit"])) {
+		results = parseCommand(command, Units, UnitsAlias, true);
+		if (!unitExists(results["unit"], Units, UnitsAlias)) {
 			return {"error": "Unit Not Found."};
 		}
 	
