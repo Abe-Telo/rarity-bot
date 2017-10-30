@@ -29,6 +29,7 @@ module.exports = {
 	"mace ship": "CAPITALJEDICRUISER",
 	"ackbar ship": "CAPITALMONCALAMARICRUISER",
 	"tarkin ship": "CAPITALSTARDESTROYER",
+	"captain phasma": "PHASMA",
 	"cassian": "CASSIANANDOR",
 	"cody": "CC2224",
 	"commander cody": "CC2224",
