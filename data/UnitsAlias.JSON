@@ -99,6 +99,7 @@ module.exports = {
 	"yoda": "GRANDMASTERYODA",
 	"tarkin": "GRANDMOFFTARKIN",
 	"gmt": "GRANDMOFFTARKIN",
+	"greedo": "GREEDO",
 	"han": "HANSOLO",
 	"raid han": "HANSOLO",
 	"rhan": "HANSOLO",
