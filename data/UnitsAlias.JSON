@@ -24,6 +24,7 @@ module.exports = {
 	"bodhi": "BODHIROOK",
 	"cad": "CADBANE",
 	"bane": "CADBANE",
+	"cad bane": "CADBANE",
 	"chimaera": "CAPITALCHIMAERA",
 	"mace ship": "CAPITALJEDICRUISER",
 	"ackbar ship": "CAPITALMONCALAMARICRUISER",

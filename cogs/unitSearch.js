@@ -4,7 +4,7 @@ const UnitsAlias = require("../data/UnitsAlias.JSON");
 const Units = require("../data/Units.JSON");
  
 function unitExists(unit) {
-	return (Units[unit] !== undefined || UnitsAlias[unit] !== undefined);
+	return (Units[unit.toUpperCase()] !== undefined || UnitsAlias[unit.toLowerCase()] !== undefined);
 }
 
 function parseCommand(command, assumeStar = false) {
@@ -26,7 +26,7 @@ module.exports = function (command) {
 	}
 	
 	let results = parseCommand(command);
-	
+
 	if (!unitExists(results["unit"])) {
 
 		results = parseCommand(command, true);
@@ -36,9 +36,11 @@ module.exports = function (command) {
 	
 	}
 
-	if (!Units[results["unit"]]) {
-		results["unit"] = UnitsAlias[results["unit"]];
+	if (UnitsAlias[results["unit"].toLowerCase()]) {
+		results["unit"] = UnitsAlias[results["unit"].toLowerCase()];
+	} else if (Units[results["unit"].toUpperCase()]) {
+		results["unit"] = results["unit"].toUpperCase(); 
 	}
-	
+
 	return results;
 };

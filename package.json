@@ -1,7 +1,7 @@
 {
   "name": "rarity-bot",
   "version": "1.0.0",
-  "description": "Bot created for discord guild army or ren.",
+  "description": "This bot is for use in Discord servers in the game Star Wars Galaxy of Heroes. Its primary function is to assist guilds with filling platoons for Territory Battles.",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
