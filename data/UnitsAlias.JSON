@@ -11,6 +11,7 @@ module.exports = {
 	"arc 170": "ARC170CLONESERGEANT",
 	"rex ship": "ARC170REX",
 	"asajj": "ASAJVENTRESS",
+	"ventress": "ASAJVENTRESS",
 	"b2": "B2SUPERBATTLEDROID",
 	"super battle droid": "B2SUPERBATTLEDROID",
 	"barriss": "BARRISSOFFEE",
